@@ -57,7 +57,12 @@
           <a href="paginas/chocolate.html">Bolo de chocolate</a>
         </h3>
         <p>R$14,00</p>
-        <button data-nome="Bolo de chocolate" data-preco="14">
+        <button
+          class="btn-produto"
+          data-id="1"
+          data-nome="Bolo de chocolate"
+          data-preco="14"
+        >
           Adicionar ao carrinho
         </button>
       </div>
@@ -127,8 +132,6 @@
     </main>
 
     <aside id="carrinho">
-      <h2>Carrinho</h2>
-
       <div class="topo-carrinho">
         <h2>Seu carrinho</h2>
 
@@ -141,7 +144,10 @@
 
       <div class="resumo">
         <p>Total:</p>
-        <strong>R$ <span id="total">0,00</span></strong>
+        <h2>
+          R$
+          <span id="total">0,00</span>
+        </h2>
       </div>
 
       <button id="finalizar">Finalizar compra</button>
