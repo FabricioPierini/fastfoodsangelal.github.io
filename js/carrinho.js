@@ -1,11 +1,6 @@
 
 let carrinho = [];
-const carrinhoSalvo = localStorage.getItem("carrinho");
 
-if (carrinhoSalvo) {
-  carrinho = JSON.parse(carrinhoSalvo);
-}
-atualizarCarrinho();
 
 const botoes = document.querySelectorAll(".btn-produto");
 
@@ -25,13 +20,29 @@ function salvarCarrinho(){
 
 function atualizarTudo(){
   atualizarCarrinho();
+  atualizarTotal();
   salvarCarrinho();
+  atualizarContador();
 }
 
 function aumentarQuantidade(id){
   const produto = carrinho.find(item => item.id === id);
   produto.quantidade++;
   atualizarTudo()
+}
+
+function diminuirQuantidade(id){
+  const produto = carrinho.find(item => item.id === id);
+  produto.quantidade--;
+  if (produto.quantidade <= 0){
+    carrinho = carrinho.filter(item => item.quantidade > 0);
+  }
+  atualizarTudo();
+}
+
+function limparCarrinho(){
+  carrinho = [];
+  atualizarTudo();
 }
 
 function adicionarProduto(produto){
@@ -47,6 +58,16 @@ function adicionarProduto(produto){
 function atualizarCarrinho() {
   const listaCarrinho = document.getElementById("lista-carrinho");
   listaCarrinho.innerHTML = "";
+  if (carrinho.length === 0) {
+    listaCarrinho.innerHTML = `
+      <p class="carrinho-vazio">
+      🛒<br><br>
+      Seu carrinho está vazio.
+      </p>
+    `;
+    atualizarTotal();
+    return;
+  }
   carrinho.forEach(produto => {
     const subtotal = produto.preco * produto.quantidade;
     listaCarrinho.innerHTML += `
@@ -78,6 +99,20 @@ function atualizarTotal(){
   total.textContent = formatarPreco(soma);
 }
 
+function atualizarContador(){
+  let quantidade = 0;
+  carrinho.forEach(produto =>{
+    quantidade += produto.quantidade;
+  });
+  contadorCarrinho.textContent = quantidade;
+
+  if (quantidade === 0) {
+    contadorCarrinho.style.display = "none";
+  } else {
+    contadorCarrinho.style.display = "inline-block";
+  }
+}
+
 botoes.forEach(botao => {
   botao.addEventListener("click", () => {
     const produto = {
@@ -89,6 +124,14 @@ botoes.forEach(botao => {
     adicionarProduto(produto);
   });
 });
+
+const contadorCarrinho =
+document.getElementById("contador-carrinho");
+
+  const botaoLimpar = document.getElementById("limpar-carrinho");
+  botaoLimpar.addEventListener("click", () => {
+    limparCarrinho();
+  });
 
 const listaCarrinho = document.getElementById("lista-carrinho");
 listaCarrinho.addEventListener("click", (evento) => {
@@ -102,6 +145,13 @@ if(evento.target.classList.contains("diminuir")){
   diminuirQuantidade(evento.target.dataset.id);
 }
 });
+
+const carrinhoSalvo = localStorage.getItem("carrinho");
+
+if (carrinhoSalvo) {
+  carrinho = JSON.parse(carrinhoSalvo);
+}
+atualizarTudo();
 
 
 

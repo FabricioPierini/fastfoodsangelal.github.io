@@ -237,3 +237,23 @@ body {
   color: #d35400;
   transform: rotate(90deg);
 }
+
+#contador-carrinho{
+  background: #d35400;
+  color: white;
+
+  border-radius: 50%;
+
+  min-width: 20px;
+  height: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 8px;
+
+  flex-shrink: 0;
+}
