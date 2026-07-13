@@ -28,6 +28,12 @@ function atualizarTudo(){
   salvarCarrinho();
 }
 
+function aumentarQuantidade(id){
+  const produto = carrinho.find(item => item.id === id);
+  produto.quantidade++;
+  atualizarTudo()
+}
+
 function adicionarProduto(produto){
   const produtoExistente = carrinho.find(item => item.id === produto.id);
   if(produtoExistente){
@@ -35,8 +41,7 @@ function adicionarProduto(produto){
   }else{
     carrinho.push(produto);
   }
-  atualizarCarrinho();
-  salvarCarrinho();
+  atualizarTudo();
 }
 
 function atualizarCarrinho() {
@@ -47,7 +52,15 @@ function atualizarCarrinho() {
     listaCarrinho.innerHTML += `
     <div class="item-carrinho">
       <h4>${produto.nome}</h4>
-      <p>Quantidade: ${produto.quantidade}</p>
+      <div class="controle-quantidade">
+        <button class="diminuir" data-id="${produto.id}">
+          -
+        </button>
+        <span>${produto.quantidade}</span>
+        <button class="aumentar" data-id="${produto.id}">
+          +
+        </button>
+      </div>
       <p>${formatarPreco(subtotal)}</p>
     </div>
     <hr>
@@ -76,3 +89,19 @@ botoes.forEach(botao => {
     adicionarProduto(produto);
   });
 });
+
+const listaCarrinho = document.getElementById("lista-carrinho");
+listaCarrinho.addEventListener("click", (evento) => {
+  console.log(evento.target);
+
+  if(evento.target.classList.contains("aumentar")){
+  aumentarQuantidade(evento.target.dataset.id);
+}
+
+if(evento.target.classList.contains("diminuir")){
+  diminuirQuantidade(evento.target.dataset.id);
+}
+});
+
+
+
