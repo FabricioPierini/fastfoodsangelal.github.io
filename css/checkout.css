@@ -1,0 +1,51 @@
+.checkout{
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 20px;
+}
+
+.resumo-pedido,
+.dados-entrega{
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 0 15px rgba(0,0,0,.1);
+}
+
+h2{
+    color: #d96b00;
+    margin-bottom: 20px;
+}
+
+input,
+select,
+textarea{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#finalizar-pedido{
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #25D366;
+    color: white;
+    transition: .3s;
+}
+
+#finalizar-pedido:hover{
+    transform: scale(1.02);
+    opacity: .9;
+}
