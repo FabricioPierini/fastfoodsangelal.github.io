@@ -8,6 +8,8 @@ const observacoes = document.getElementById("observacoes");
 const pagamento = document.getElementById("pagamento");
 const botaoFinalizar = document.getElementById("finalizar-pedido");
 
+
+
 const listaCheckout = document.getElementById("lista-checkout");
 const totalCheckout = document.getElementById("total-checkout");
 const subtotalCheckout = document.getElementById("subtotal-checkout");
@@ -88,7 +90,21 @@ function gerarMensagem(){
     📝 Observações:
     ${observacoes.value}
     `;
+
+    const mensagemCodificada =
+    encodeURIComponent(mensagem);
+    const nuemroLoja =
+    "5512981233970";
+
+    window.open(
+        `https://wa.me/${nuemroLoja}?text=${mensagemCodificada}`,
+        "_blank"
+    );
 }
+
+botaoFinalizar.addEventListener("click", () => {
+    gerarMensagem();
+});
 
 carregarCheckout();
 atualizarTotalCheckout();
