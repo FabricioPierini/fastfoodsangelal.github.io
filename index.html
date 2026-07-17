@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -37,15 +41,30 @@
       </button>
     </header>
 
-    <section class="banner">
-      <img
-        src="img/banner.jpeg"
-        alt="Bolos da confeitaria"
-        class="banner-img"
-      />
-      <div class="banner-overlay"></div>
-      <div class="banner-texto">
-        <h1>Bolos caseiros feitos com carinho</h1>
+    <section class="hero">
+      <div class="hero-texto">
+        <h1>Bolos caseiro, bolos de pote e salgados, feitos especialmente para você!</h1>
+        <a href="#produtos" class="botao-banner">
+          Ver cardápio
+        </a>
+      </div>
+      <div class="hero-imagem">
+        <img src="img/banner.jpeg" alt="Produtos">
+      </div>
+    </section>
+
+    <section class="vantagens">
+      <div class="vantagem">
+        <span>🍰</span>
+        <h3>Receitas caseiras</h3>
+      </div>
+            <div class="vantagem">
+        <span>⚡</span>
+        <h3>Atendimento rápido</h3>
+      </div>
+            <div class="vantagem">
+        <span>💬</span>
+        <h3>Pedidos pelo WhatsApp</h3>
       </div>
     </section>
 
@@ -54,10 +73,11 @@
         <a href="paginas/chocolate.html"
           ><img src="img/chocolate.jpg" alt="Bolo de chocolate"
         /></a>
+        <div class="info-card">
         <h3>
           <a href="paginas/chocolate.html">Bolo de chocolate</a>
         </h3>
-        <p>R$14,00</p>
+        <p class="preco">R$14,00</p>
         <button
           class="btn-produto"
           data-id="1"
@@ -66,16 +86,18 @@
         >
           Adicionar ao carrinho
         </button>
+        </div>
       </div>
 
       <div class="card">
         <a href="paginas/milho.html"
           ><img src="img/milho.jpg" alt="Bolo de milho"
         /></a>
+        <div class="info-card">
         <h3>
           <a href="paginas/milho.html">Bolo de milho</a>
         </h3>
-        <p>R$14,00</p>
+        <p class="preco">R$14,00</p>
         <button
           class="btn-produto"
           data-id="2"
@@ -84,16 +106,18 @@
         >
           Adicionar ao carrinho
         </button>
+        </div>
       </div>
 
       <div class="card">
         <a href="paginas/fuba.html"
           ><img src="img/fuba.jpg" alt="Bolo de fubá"
         /></a>
+        <div class="info-card">
         <h3>
           <a href="paginas/fuba.html">Bolo de fubá</a>
         </h3>
-        <p>R$14,00</p>
+        <p class="preco">R$14,00</p>
         <button
           class="btn-produto"
           data-id="3"
@@ -102,16 +126,18 @@
         >
           Adicionar ao carrinho
         </button>
+        </div>
       </div>
 
       <div class="card">
         <a href="paginas/aipim.html"
           ><img src="img/aipim.jpg" alt="Bolo de aipim"
         /></a>
+        <div class="info-card">
         <h3>
           <a href="paginas/aipim.html">Bolo de aipim</a>
         </h3>
-        <p>R$14,00</p>
+        <p class="preco">R$14,00</p>
         <button
           class="btn-produto"
           data-id="4"
@@ -120,16 +146,18 @@
         >
           Adicionar ao carrinho
         </button>
+        </div>
       </div>
 
       <div class="card">
         <a href="paginas/formigueiro.html"
           ><img src="img/formigueiro.jpg" alt="Bolo formigueiro"
         /></a>
+        <div class="info-card">
         <h3>
           <a href="paginas/formigueiro.html">Bolo formigueiro</a>
         </h3>
-        <p>R$14,00</p>
+        <p class="preco">R$14,00</p>
         <button
           class="btn-produto"
           data-id="5"
@@ -138,16 +166,18 @@
         >
           Adicionar ao carrinho
         </button>
+        </div>
       </div>
 
       <div class="card">
         <a href="paginas/laranja.html"
           ><img src="img/laranja.jpg" alt="Bolo de laranja"
         /></a>
+        <div class="info-card">
         <h3>
           <a href="paginas/laranja.html">Bolo de laranja</a>
         </h3>
-        <p>R$14,00</p>
+        <p class="preco">R$14,00</p>
         <button
           class="btn-produto"
           data-id="6"
@@ -156,16 +186,18 @@
         >
           Adicionar ao carrinho
         </button>
+        </div>
       </div>
 
       <div class="card">
         <a href="paginas/cenoura.html"
           ><img src="img/cenoura.jpg" alt="Bolo de cenoura"
         /></a>
+        <div class="info-card">
         <h3>
           <a href="paginas/cenoura.html">Bolo de cenoura</a>
         </h3>
-        <p>R$14,00</p>
+        <p class="preco">R$14,00</p>
         <button
           class="btn-produto"
           data-id="7"
@@ -174,16 +206,18 @@
         >
           Adicionar ao carrinho
         </button>
+        </div>
       </div>
 
       <div class="card">
         <a href="paginas/mesclado.html"
           ><img src="img/mesclado.jpg" alt="Bolo mesclado"
         /></a>
+        <div class="info-card">
         <h3>
           <a href="paginas/mesclado.html">Bolo mesclado</a>
         </h3>
-        <p>R$14,00</p>
+        <p class="preco">R$14,00</p>
         <button
           class="btn-produto"
           data-id="8"
@@ -192,6 +226,7 @@
         >
           Adicionar ao carrinho
         </button>
+        </div>
       </div>
     </main>
 
