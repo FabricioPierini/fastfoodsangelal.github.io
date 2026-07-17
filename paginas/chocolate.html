@@ -4,42 +4,108 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bolo de chocolate</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../css/produtos.css" />
   </head>
   <body>
-    <header>
-      <a href="../index.html"> ← Voltar para a loja </a>
+        <header class="logo">
+      <a href="index.html" class="logo">
+        <img src="../img/logo.png" alt="Logo: FastFood Sangelal" />
+      </a>
+      <a href="../index.html" class="btn-loja"> ← Voltar para a loja </a>
+            <button id="abrirCarrinho" class="btn-carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>Carrinho</span>
+        <span id="contador-carrinho">0</span>
+      </button>
     </header>
 
     <main class="produto">
-      <div class="produto-imagem">
-        <img src="../img/chocolate.jpg" alt="Bolo de Chocolate" />
+      <div class="galeria">
+        <img id="imagemPrincipal" src="../img/chocolate.jpg" alt="Bolo de Chocolate" />
+
+        <div class="miniaturas">
+          <img src="../img/chocolate.jpg">
+          <img src="../img/chocolate2.jpg">
+          <img src="../img/chocolate3.jpg">
+          <img src="../img/chocolate4.jpg">
+        </div>
       </div>
+
 
       <div class="produto-info">
         <h1>Bolo de Chocolate</h1>
         <p class="preco">R$ 14,00</p>
 
         <h3>Descrição</h3>
-        <p>Um delicioso bolo de chocolate, macio e coberto com ganache.</p>
-        <h3>Ingredientes</h3>
+        <p>Um bolo de chocolate delicioso e macio. </p>
 
-        <ul>
-          <li>Farinha de trigo</li>
+        <details open>
+          <summary>
+            Ingredientes
+          </summary>
+          <ul>
+            <li>Farinha de trigo</li>
+            <li>Chocolate em pó</li>
+            <li>Ovos</li>
+            <li>Leite</li>
+            <li>Manteiga</li>
+          </ul>
+        </details>
 
-          <li>Chocolate em pó</li>
+        <details>
+          <summary>
+            Informações nutricionais
+          </summary>
+          <table>
+            ...
+          </table>
+        </details>
 
-          <li>Ovos</li>
-
-          <li>Leite</li>
-
-          <li>Manteiga</li>
-        </ul>
-
-        <button class="btn-produto">Adicionar ao carrinho</button>
+        <button             
+          class="btn-produto"
+          data-id="1"
+          data-categoria="bolo"
+          data-nome="Bolo de chocolate"
+          data-preco="14">Adicionar ao carrinho</button>
       </div>
     </main>
 
+    <aside id="carrinho">
+      <div class="topo-carrinho">
+        <h2>Seu carrinho</h2>
+
+        <button id="fecharCarrinho">✕</button>
+      </div>
+
+      <div id="lista-carrinho">
+        <!-- Lista vai vir do js -->
+      </div>
+
+      <div class="resumo">
+        <p>Total:</p>
+        <h2>
+          
+          <span id="total">0,00</span>
+        </h2>
+      </div>
+
+      <button id="finalizar">
+        <a href="paginas/checkout.html">Finalizar compra</a>
+      </button>
+      <button id="limpar-carrinho">🗑 Limpar Carrinho</button>
+    </aside>
+
     <script src="../js/carrinho.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="..//js/produtos.js"></script>
   </body>
 </html>
