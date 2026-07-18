@@ -97,35 +97,43 @@ box-shadow: 0 2px 15px rgba(0, 0, 0, .08);
 }
 
 .galeria {
-  flex: 1;
-  text-align: center;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
 }
 
-#imagemPrincipal {
-  width: 100%;
-  max-width: 520px;
+.imagem-principal img {
+  width: 500px;
+  max-width: 100%;
   border-radius: 18px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  display: block;
 }
 
 .miniaturas{
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  margin-top: 15px;
 }
 
-.miniaturas img{
+.miniatura{
   width: 80px;
   height: 80px;
   object-fit: cover;
   border-radius: 10px;
   cursor: pointer;
+  border: 2px solid transparent;
   transition: .3s;
 }
 
-.miniaturas img:hover{
+.miniatura:hover{
   transform: scale(1.05);
 }
+
+.miniatura.ativa{
+  border: 2px solid #F28C28;
+}
+
 
 .produto-info {
   flex: 1;
@@ -182,6 +190,32 @@ summary{
 
 details[open]{
   box-shadow: 0 px 20px rgba(0, 0, 0, .08);
+}
+
+table{
+  border-collapse: collapse;
+  border: 1px solid rgb(140, 140, 140);
+  font-size: 0.8rem;
+}
+
+caption{
+  padding: 10px;
+  font-weight: bold;
+}
+
+thead{
+  background-color: rgb(288, 240, 245);
+}
+
+th,
+td{
+  border: 1px solid rgb(160, 160, 160);
+  padding: 4px 5px;
+  text-align: center;
+}
+
+tbody > tr:nth-of-type(even){
+  background-color: rgb(237, 238, 242);
 }
 
 #carrinho {
