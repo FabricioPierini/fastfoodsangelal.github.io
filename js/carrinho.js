@@ -4,6 +4,7 @@ let carrinho = [];
 
 const botoes = document.querySelectorAll(".btn-produto");
 
+
 function formatarPreco(valor) {
   return valor.toLocaleString("pt-BR", {
     style: "currency",
@@ -68,6 +69,7 @@ function atualizarCarrinho() {
     atualizarTotal();
     return;
   }
+
   carrinho.forEach(produto => {
     const subtotal = produto.preco * produto.quantidade;
     listaCarrinho.innerHTML += `
@@ -81,8 +83,9 @@ function atualizarCarrinho() {
         <button class="aumentar" data-id="${produto.id}">
           +
         </button>
+              <p>${formatarPreco(subtotal)}</p>
       </div>
-      <p>${formatarPreco(subtotal)}</p>
+      <img class="img-carrinho" src="${produto.imagem}">
     </div>
     <hr>
     `;
@@ -115,15 +118,22 @@ function atualizarContador(){
 
 botoes.forEach(botao => {
   botao.addEventListener("click", () => {
+  console.log("Nome:", botao.dataset.nome);
+  console.log("Preço:", botao.dataset.preco);
+  console.log("Imagem:", botao.dataset.imagem);
     const produto = {
       id: botao.dataset.id,
       nome: botao.dataset.nome,
       preco: Number(botao.dataset.preco),
+      imagem: botao.dataset.imagem,
       quantidade:1
     };
+    console.log(produto);
     adicionarProduto(produto);
   });
 });
+
+
 
 const contadorCarrinho =
 document.getElementById("contador-carrinho");

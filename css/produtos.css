@@ -1,3 +1,5 @@
+/* base do site */
+
 *{
   font-family: "Nunito Sans", sans-serif;
 }
@@ -26,6 +28,8 @@ body {
   background: #fff8f3;
 }
 
+/* header */
+
 header {
 position: sticky;
 top: 0;
@@ -38,6 +42,17 @@ padding: 8px 8%;
 background: linear-gradient(90deg,#d96b00,#F28C28);
 backdrop-filter: blur(8px);
 box-shadow: 0 2px 15px rgba(0, 0, 0, .08);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo img {
+  height: 120px;
+  width: auto;
 }
 
 .btn-loja {
@@ -55,17 +70,6 @@ box-shadow: 0 2px 15px rgba(0, 0, 0, .08);
 .btn-loja:hover{
     background: #ffe6d5;
   transform: translateY(-2px);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.logo img {
-  height: 120px;
-  width: auto;
 }
 
 .btn-carrinho {
@@ -88,6 +92,8 @@ box-shadow: 0 2px 15px rgba(0, 0, 0, .08);
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* fotos do produto */
+
 .produto {
   display: flex;
   justify-content: center;
@@ -108,6 +114,15 @@ box-shadow: 0 2px 15px rgba(0, 0, 0, .08);
   border-radius: 18px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   display: block;
+}
+
+.fadeIn{
+  animation: fadeIn .3s;
+}
+
+@keyframes fadeIn{
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 .miniaturas{
@@ -134,8 +149,10 @@ box-shadow: 0 2px 15px rgba(0, 0, 0, .08);
   border: 2px solid #F28C28;
 }
 
+/* infotmações e preço */
 
 .produto-info {
+  margin-top: -27px;
   flex: 1;
 }
 
@@ -148,18 +165,12 @@ box-shadow: 0 2px 15px rgba(0, 0, 0, .08);
   font-size: 2rem;
   color: #ff7a00;
   font-weight: 800;
-}
-
-.produto-info p {
   line-height: 1.7;
 }
 
-.produto-info ul {
-  padding-left: 20px;
-}
-
-.produto-info button {
-  margin-top: 25px;
+.btn-produto {
+  margin-top: 5px;
+  margin-bottom: 35px;
   padding: 15px 35px;
   border: none;
   border-radius: 30px;
@@ -170,9 +181,15 @@ box-shadow: 0 2px 15px rgba(0, 0, 0, .08);
   transition: 0.3s;
 }
 
-.produto-info button:hover {
+.btn-produto:hover {
   transform: translateY(-3px);
   background: #ff8d1f;
+}
+
+/* ingredientes/tabela */
+
+.ingredientes {
+  padding-left: 20px;
 }
 
 details{
@@ -186,11 +203,18 @@ summary{
   cursor:pointer;
   font-weight: 700;
   color: #F28C28;
+  cursor: pointer;
+}
+
+summary:hover{
+  text-decoration: underline;
 }
 
 details[open]{
   box-shadow: 0 px 20px rgba(0, 0, 0, .08);
 }
+
+/* tabela nutricional */
 
 table{
   border-collapse: collapse;
@@ -210,6 +234,7 @@ thead{
 th,
 td{
   border: 1px solid rgb(160, 160, 160);
+  border-bottom: 1px solid rgb(160, 160, 160);
   padding: 4px 5px;
   text-align: center;
 }
@@ -217,6 +242,8 @@ td{
 tbody > tr:nth-of-type(even){
   background-color: rgb(237, 238, 242);
 }
+
+/* aside carrinho */
 
 #carrinho {
   position: fixed;
@@ -258,19 +285,14 @@ tbody > tr:nth-of-type(even){
 #contador-carrinho{
   background: #d35400;
   color: white;
-
   border-radius: 50%;
-
   min-width: 20px;
   height: 20px;
-
   display: flex;
   justify-content: center;
   align-content: center;
-
   font-size: 12px;
   font-weight: bold;
   margin-left: 8px;
-
   flex-shrink: 0;
 }

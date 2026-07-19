@@ -1,3 +1,10 @@
+h2{
+    color: #d96b00;
+    margin-bottom: 20px;
+}
+
+/* carrinho */
+
 .checkout{
     max-width: 1200px;
     margin: 40px auto;
@@ -15,10 +22,7 @@
     box-shadow: 0 0 15px rgba(0,0,0,.1);
 }
 
-h2{
-    color: #d96b00;
-    margin-bottom: 20px;
-}
+/* area do usuario */
 
 input,
 select,
@@ -31,6 +35,8 @@ textarea{
     font-size: 16px;
     box-sizing: border-box;
 }
+
+/* botão whatsapp */
 
 #finalizar-pedido{
     width: 100%;

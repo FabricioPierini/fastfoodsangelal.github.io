@@ -294,13 +294,14 @@ body {
 #carrinho {
   position: fixed;
   right: -350px;
-  top: 0;
+  top: 40px;
   width: 320px;
   height: 100vh;
   background: white;
   padding: 60px 10px;
   box-sizing: border-box;
   box-shadow: -8px 0 20px rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
   transition: 0.4s;
 }
 
@@ -313,6 +314,34 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 25px;
+}
+
+.topo-carrinho h2{
+  color: #d35400;
+}
+
+.item-carrinho{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.produto-nome{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.controle-quantidade{
+  padding-right: 15px;
+  margin-top: 10px;
+}
+
+.img-carrinho{
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  object-fit: cover;
 }
 
 #fecharCarrinho {
