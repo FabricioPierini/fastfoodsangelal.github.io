@@ -1,6 +1,7 @@
 /* base do site */
 *{
   font-family: "Nunito Sans", sans-serif;
+  box-sizing: border-box;
 }
 
 h1{
@@ -301,7 +302,9 @@ body {
   padding: 60px 10px;
   box-sizing: border-box;
   box-shadow: -8px 0 20px rgba(0, 0, 0, 0.2);
-  overflow-y: scroll;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ff8c42 #f5f5f5;
   transition: 0.4s;
 }
 
@@ -321,27 +324,126 @@ body {
 }
 
 .item-carrinho{
-  display: flex;
+  display: grid;
   justify-content: space-between;
   align-items: center;
+  grid-template-columns:1fr 110px 90px;
 }
 
-.produto-nome{
+.nome-produto{
+  width: 160px;
+}
+
+.acoes-produto{
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  gap: 8px;
+  width: 120px;
 }
 
 .controle-quantidade{
+  display: flex;
   padding-right: 15px;
   margin-top: 10px;
+  align-items: center;
+}
+
+.controle-quantidade button{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 10px;
+  background: #ff8c42;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.controle-quantidade button:hover{
+  transform: scale(1.08);
+  filter: brightness(.92);
+}
+
+.controle-quantidade button:active{
+  transform: scale(.95);
+}
+
+.controle-quantidade span{
+  min-width: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .img-carrinho{
-  width: 90px;
-  height: 90px;
+  display: flex;
+  width: 80px;
+  height: 80px;
   border-radius: 20px;
   object-fit: cover;
+}
+
+.resumo {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.total-carrinho{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#total{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d35400;
+}
+
+.btn-aside{
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .2s;
+  margin-bottom: 10px;
+}
+
+.btn-aside:active{
+  transform: scale(.98);
+}
+
+#finalizar{
+  background: #ff8c42;
+  color: white;
+  border: none;
+}
+
+#finalizar:hover{
+  background: #f17722;
+  transform: translateY(-2px);
+}
+
+#limpar-carrinho{
+  background: white;
+  color: #ff8c42;
+  border: 2px solid #ff8c42;
+}
+
+#limpar-carrinho:hover{
+  background: #fff3ea;
+  transform: translateY(-2px);
 }
 
 #fecharCarrinho {
@@ -375,4 +477,24 @@ body {
   margin-left: 8px;
 
   flex-shrink: 0;
+}
+
+/* barra de rolagem do aside */
+
+#carrinho::-webkit-scrollbar{
+  width: 6px;
+}
+
+#carrinho::-webkit-scrollbar-track{
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+#carrinho::-webkit-scrollbar-thumb{
+  background: #ff8c42;
+  border-radius: 10px;
+}
+
+#carrinho::-webkit-scrollbar-thumb:hover{
+  background: #f17722;
 }

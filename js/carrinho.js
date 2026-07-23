@@ -74,16 +74,20 @@ function atualizarCarrinho() {
     const subtotal = produto.preco * produto.quantidade;
     listaCarrinho.innerHTML += `
     <div class="item-carrinho">
-      <h4>${produto.nome}</h4>
-      <div class="controle-quantidade">
-        <button class="diminuir" data-id="${produto.id}">
-          -
-        </button>
-        <span>${produto.quantidade}</span>
-        <button class="aumentar" data-id="${produto.id}">
-          +
-        </button>
-              <p>${formatarPreco(subtotal)}</p>
+      <div class:"nome-produto">
+        <h4>${produto.nome}</h4>
+      </div>
+      <div class="acoes-produto">
+        <div class="controle-quantidade">
+          <button class="diminuir" data-id="${produto.id}">
+            -
+          </button>
+          <span>${produto.quantidade}</span>
+          <button class="aumentar" data-id="${produto.id}">
+            +
+          </button>
+        </div>
+        <p>${formatarPreco(subtotal)}</p>
       </div>
       <img class="img-carrinho" src="${produto.imagem}">
     </div>
