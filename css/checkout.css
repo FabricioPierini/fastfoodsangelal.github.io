@@ -28,6 +28,7 @@ body{
 
 header {
 position: sticky;
+height: 90px;
 top: 0;
 z-index: 1000;
 display: flex;
@@ -96,14 +97,23 @@ box-shadow: 0 2px 15px rgba(0, 0, 0, .08);
 
 .checkout {
     max-width: 1200px;
-    margin: 40px auto;
+    margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 30px;
     padding: 20px;
+    align-items: start;
 }
 
-.resumo-pedido,
+.resumo-pedido{
+    position: sticky;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .8);
+    top: 100px;
+}
+
 .dados-entrega {
     background: white;
     border-radius: 20px;
@@ -155,11 +165,15 @@ box-shadow: 0 2px 15px rgba(0, 0, 0, .08);
 
 #total-checkout{
     color: #ff8c42;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 /* area do usuario */
+
+label{
+    margin-bottom: 6px;
+}
 
 input,
 select {
@@ -177,6 +191,7 @@ input:focus,
 select:focus{
     outline: none;
     border-color: #ff8c42;
+    box-shadow: 0 0 0 3px rgba(255, 140, 66, .2);
 }
 
 textarea{
@@ -194,12 +209,12 @@ textarea{
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    background: #25D366;
+    background: #0fa723;
     color: white;
     transition: .3s;
 }
 
 #finalizar-pedido:hover {
     transform: scale(1.02);
-    opacity: .9;
+    background: #0dd428;
 }
