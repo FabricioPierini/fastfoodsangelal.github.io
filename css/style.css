@@ -462,20 +462,15 @@ body {
 #contador-carrinho{
   background: #d35400;
   color: white;
-
   border-radius: 50%;
-
   min-width: 20px;
   height: 20px;
-
   display: flex;
   justify-content: center;
   align-content: center;
-
   font-size: 12px;
   font-weight: bold;
   margin-left: 8px;
-
   flex-shrink: 0;
 }
 
@@ -497,4 +492,100 @@ body {
 
 #carrinho::-webkit-scrollbar-thumb:hover{
   background: #f17722;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px){
+  header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  h1{
+    font-size: 2rem;
+  }
+
+  h2{
+    font-size: 1.6rem;
+  }
+
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+
+  main{
+    padding: 15px;
+  }
+
+  section{
+    padding: 20px 15px;
+  }
+
+  aside{
+    max-width: 100%;
+    z-index: 50;
+  }
+
+  .logo{
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logo img{
+    width: 100px;
+    height: 72px;
+  }
+
+  .nav{
+    width: 100%;
+  }
+
+  .nav button{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .carrinho{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-carrinho{
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .produtos{
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+  }
+
+  .card{
+    padding: 15px;
+  }
+
+  .card img{
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+  }
+
+  .card h3{
+    font-size: 1rem;
+  }
+
+  .preco{
+    font-size: 1.1rem;
+  }
+
+  .card button{
+    width: 100%;
+  }
 }
