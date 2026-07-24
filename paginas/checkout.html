@@ -8,6 +8,24 @@
     <link rel="stylesheet" href="../css/checkout.css">
 </head>
 <body>
+    <header class="logo">
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.png" alt="Logo: FastFood Sangelal" />
+
+            <div class="logo-texto">
+            <p>Confeitaria artesanal • Bolos • Salgados • Encomendas</p>
+            </div>
+        </a>
+
+        <nav class="menu">
+            <button onclick="toggleEndereco()">Endereço</button>
+
+            <div id="endereco-box" class="endereco-box">
+            Rua Nicolina da Silva Oliveira, 45 - Jacareí-SP
+            </div>
+        </nav>
+    </header>
+        
     <main class="checkout">
         <section class="resumo">
             <h2>Resumo do pedido</h2>
@@ -18,9 +36,13 @@
 
             <hr>
             <div class="totais">
-                <p>Subtotal <span id="subtotal-checkout">R$ 0,00</span></p>
-                <p>Entrega <span>?</span></p>
-                <h3>Total <span id="total-checkout">R$ 0,00</span></h3>
+                <div class="subtotal-checkout">
+                    <p>Subtotal <span id="subtotal-checkout">R$ 0,00</span></p>
+                    <p>Entrega <span>?</span></p>
+                </div>
+                <div class="total-checkout">
+                    <h3>Total <span id="total-checkout">R$ 0,00</span></h3>
+                </div>
             </div>
         </section>
 
@@ -58,7 +80,6 @@
         </section>
 
         <button id="finalizar-pedido">Finalizar pedido pelo WhatsApp</button>
-        <p>Confira seus daos antes de enviar o pedido</p>
     </main>
 
     <script src="../js/checkout.js"></script>

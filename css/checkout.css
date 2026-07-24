@@ -1,11 +1,100 @@
+*{
+    font-family: "Nunito Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: 800;
+}
+
 h2{
-    color: #d96b00;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+p{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+button{
+    font-weight: 700; 
+}
+
+body{
+    margin: 0;
+}
+
+header {
+position: sticky;
+top: 0;
+z-index: 1000;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 8px 8%;
+background: linear-gradient(90deg,#d96b00,#F28C28);
+backdrop-filter: blur(8px);
+box-shadow: 0 2px 15px rgba(0, 0, 0, .08);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo img {
+  height: 120px;
+  width: auto;
+}
+
+.logo-texto p {
+  margin: 0;
+  color: #fff4e6;
+  font-size: 15px;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu button {
+  background: #fff;
+  color: #d35400;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu button:hover {
+  background: #ffe6d5;
+  transform: translateY(-2px);
+}
+
+.endereco-box {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  width: 180px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
 }
 
 /* carrinho */
 
-.checkout{
+.checkout {
     max-width: 1200px;
     margin: 40px auto;
     display: grid;
@@ -15,30 +104,89 @@ h2{
 }
 
 .resumo-pedido,
-.dados-entrega{
+.dados-entrega {
     background: white;
-    border-radius: 12px;
+    border-radius: 20px;
     padding: 25px;
-    box-shadow: 0 0 15px rgba(0,0,0,.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .8);
+}
+
+.resumo-pedido h2{
+    margin-bottom: 20px;
+}
+
+.produto-checkout {
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 1fr 110px 90px;
+}
+
+.nome-produto{
+    width: 160px;
+}
+
+.controle-quantidade{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    width: 120px;
+}
+
+.controle-quantidade span{
+    border-top: 1px solid #ccc;
+}
+
+.img-carrinho{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.totais{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#total-checkout{
+    color: #ff8c42;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 /* area do usuario */
 
 input,
-select,
-textarea{
+select {
     width: 100%;
     padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
     box-sizing: border-box;
+}
+
+input:focus,
+select:focus{
+    outline: none;
+    border-color: #ff8c42;
+}
+
+textarea{
+    resize: vertical;
+    min-height: 14px;
 }
 
 /* botão whatsapp */
 
-#finalizar-pedido{
+#finalizar-pedido {
     width: 100%;
     padding: 16px;
     font-size: 18px;
@@ -51,7 +199,7 @@ textarea{
     transition: .3s;
 }
 
-#finalizar-pedido:hover{
+#finalizar-pedido:hover {
     transform: scale(1.02);
     opacity: .9;
 }

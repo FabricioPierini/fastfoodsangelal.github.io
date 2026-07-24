@@ -9,7 +9,6 @@ const pagamento = document.getElementById("pagamento");
 const botaoFinalizar = document.getElementById("finalizar-pedido");
 
 
-
 const listaCheckout = document.getElementById("lista-checkout");
 const totalCheckout = document.getElementById("total-checkout");
 const subtotalCheckout = document.getElementById("subtotal-checkout");
@@ -22,14 +21,29 @@ function formatarPreco(valor) {
 });
 }
 
+function toggleEndereco() {
+  const box = document.getElementById("endereco-box");
+
+  if (box.style.display === "block") {
+    box.style.display = "none";
+  } else {
+    box.style.display = "block";
+  }
+}
+
+console.log(carrinho);
+
 function carregarCheckout(){
 listaCheckout.innerHTML = "";
 carrinho.forEach(produto => {
     listaCheckout.innerHTML += `
     <div class="produto-checkout">
-        <h3>${produto.nome}</h3>
-        <p>Quantidade: ${produto.quantidade}</p>
-        <p>${formatarPreco(produto.preco * produto.quantidade)}</p>
+        <div class:"nome-produto">
+            <h4>${produto.nome}</h4>
+            <span>Quantidade: ${produto.quantidade}</span>
+            <p>${formatarPreco(produto.preco * produto.quantidade)}</p>
+        </div>
+        <img class="img-carrinho" src="${produto.imagem}">
     </div>
     `;
 });
